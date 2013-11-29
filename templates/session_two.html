@@ -1,0 +1,66 @@
+{% extends "bootstrap_base.html" %}
+{% load url from future %}
+
+ {% block title %} Update User Info
+{% endblock %} {% block script %}
+<script>
+
+</script>
+{% endblock %} {% block script_end_body %}
+<script type="text/javascript">setNavActive("nav_3")</script>
+<script type="text/javascript">
+	function Countdown(options) {
+	  var timer,
+	  instance = this,
+	  seconds = options.seconds || 10,
+	  updateStatus = options.onUpdateStatus || function () {},
+	  counterEnd = options.onCounterEnd || function () {};
+
+	  function decrementCounter() {
+	    updateStatus(seconds);
+	    if (seconds === 0) {
+	      counterEnd();
+	      instance.stop();
+	    }
+	    seconds--;
+	  }
+
+	  this.start = function () {
+	    clearInterval(timer);
+	    timer = 0;
+	    seconds = options.seconds;
+	    timer = setInterval(decrementCounter, 1000);
+	  };
+
+	  this.stop = function () {
+	    clearInterval(timer);
+	  };
+	}
+
+	var myCounter = new Countdown({  
+	    seconds:15,  // number of seconds to count down
+	    onUpdateStatus: function(sec){console.log(sec);}, // callback for each second
+	    onCounterEnd: function(){
+	     // alert('counter ended!');
+	     window.location = "/thanks/"
+	     } // final action
+	});
+
+myCounter.start();
+</script>
+ 
+{% endblock %} {% block body %}
+
+<h4>Session 2 Ends!</h4>
+<ul>
+	First session ends, your group score is <font color="red">{{group_score}}</font>, you will be directed to thank you page automatically in 1 minute!
+
+</ul>
+
+
+
+
+{% endblock %}
+
+
+

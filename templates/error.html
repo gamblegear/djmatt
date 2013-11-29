@@ -1,0 +1,29 @@
+{% extends "bootstrap_base.html" %}
+{% load url from future %}
+
+ {% block title %} Update User Info
+{% endblock %} {% block script %}
+<script>
+
+</script>
+{% endblock %} {% block script_end_body %}
+<script type="text/javascript">
+	alert("{{error}}");
+	$(document).ready(function(){
+		window.location.replace("{{relocation}}");
+
+		}
+
+	);
+</script>
+<div class = 'test'></div>
+{% endblock %} {% block body %}
+
+Something wrong happens..
+
+
+
+{% endblock %}
+
+
+

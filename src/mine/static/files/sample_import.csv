@@ -1,0 +1,18 @@
+email,%%first_name%%,%%last_name%%,%%hobby%%,is_bounced,is_replied,is_demo
+shoudaw@gmail.com,Shouda,Wang,play,FALSE,TRUE,FALSE
+wangshouda@gmail.com,Shouda1,Wang 1,reading,FALSE,TRUE,FALSE
+shoudawang@hotmail.com,Shouda2,Wang 2,watching movies,FALSE,TRUE,TRUE
+shoudaw@hotmail.com,Shouda3,Wang 3,programming,FALSE,TRUE,TRUE
+johnnywsd@gmail.com,S3,WSD 4,running,TRUE,FALSE,FALSE
+Johnnywsd@163.com,S3,WSD,eating,FALSE,TRUE,FALSE
+johnnywsd@hotmail.com,S3,WSD,playing video game,FALSE,FALSE,TRUE
+johnnywsd@ymail.com,S3,WSD,coding,TRUE,FALSE,TRUE
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+Please delete this part after your reading.,,,,,,
+"1.email must be the first column, the column name must be email (must be lower-case)",,,,,,
+2.Blank row are not allowed.,,,,,,
+3.Any other variable name must be defined like this: %%variable_name%%. No spaces are allowed in variable_name,,,,,,
+4.MUST use comma as your separator when you save your csv file. You can review you csv file by windows notepad.,,,,,,

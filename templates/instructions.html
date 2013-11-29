@@ -1,0 +1,112 @@
+{% extends "bootstrap_base.html" %}
+{% load url from future %}
+
+ {% block title %} Update User Info
+{% endblock %} {% block script %}
+<script>
+
+</script>
+{% endblock %} {% block script_end_body %}
+<script type="text/javascript">setNavActive("nav_0")</script>
+
+ 
+{% endblock %} {% block body %}
+
+<h1>Instructions for Participants</h1>
+<hr />
+
+{% load url from future %}
+{% load staticfiles %}
+
+
+<div>
+	
+	<ul>
+	  Welcome and thank you for participating in our economic decision-making study. If you read and follow these instructions carefully, you can, depending on your decisions and the decisions made by other participants, earn a considerable amount of money. It is therefore important that you take the time to understand the instructions. 
+IMPORTANTLY: All the information provided here is correct, and all the payments will be made as promised. So there is NO DECEPTION involved. Also, all participants read the exact same instructions for each treatment.
+	</ul>
+	<ul>
+		After the experiment you will be given a unique code corresponding to your earnings in this game. Upon returning to Mechanical Turk and entering this code your earnings will be paid to you privately, including your show up fee and any additional money you have earned.
+	</ul>
+</div>
+
+<div>
+	<h3>1 Overview of the experiment</h3>
+	<ul>
+	  <li>Each and every participant in this experiment is assigned to the same “worker” role. You will be paired with other participants in groups of three to work on a task.
+
+The experiment has 2 periods each lasting 15 minutes. In each period you will be assigned to a different group with two others to work on a task. Participants will be matched randomly. </li>
+	</ul>
+</div>
+
+<div>
+	<h3>2 Details of the experiment</h3>
+	<ul>
+	  <li>At the beginning of the first period, participants will be asked to wait until all subjects arrive. Upon the arrival of all, participants will be placed into groups made of those from the same country.</li>
+	  <li>In the group of three, each worker will click to de-mine a portion of a larger minefield. The field is divided into thirds: Portion A, Portion B, and Portion C.</li>
+	  <li>Initially, each worker is placed into a different portion. Workers can choose to work on the same portions of the larger field or different portions.</li>
+	  <li>Workers de-mine a field by clicking one square in it. After each click there is a 10 second re-charge required before another square can be de-mined.</li>
+	  <li>After beginning work on one portion of the larger field, a worker can switch to another portion at a cost. </li>
+	  <li>
+	  	Screenshot for de-mining:
+	  	<img <img src ="{% static 'img/ins.png' %}">>
+	  </li>
+	</ul>
+</div>
+
+<div>
+	<h3>3 Details of switching</h3>
+	<ul>
+	  <li>To switch to a different portion than the one they started in, a worker must pay a cost of 5 clicked squares. So if a worker has 30 squares clicked prior to switching, that player’s progress will be reduced to 25 upon the switch. If a worker opts to switch, they will then observe the progress made in each of the other portions of the field and they will be given the opportunity to work on one of those fields if they so choose. At any point during their work on the other field a worker can return to the field they started from without paying a cost by clicking “switch back.” Note that the “switch” button incurs a cost while the “switch back” button does not.
+<li></li>
+<li>Example of a screenshot after switching:</li>
+	  <li><img src ="{% static 'img/ins2.png' %}"></li>
+	</ul>
+</div>
+
+<div>
+	<h3>Procedure</h3>
+	<ul>
+	  <li>Once a period begins groups are free to begin de-mining fields as they see fit. Each period will last approximately 15 minutes, at which point group and individual payoffs will be computed for that period. Players will be observe to observe their group’s output and then the second round will begin, with the rules remaining the exact same as in the first period.
+</li>
+	  <li>The calculation of payoffs will be as follows: each group will be paid according to the progress made in the least complete portion only. The amount completed in the least-complete portion will be multiplied against $10 (the value of a 100% completed field.) This amount will then be distributed equally among the group members.
+</li>
+	  <li>The experiment consists of two such periods. </li>
+	  <li>At the end of the experiment, after both periods are over, we will sum your payoffs from all periods. Each individual will be provided a unique code which identifies them. It is imperative that each player copy this code accurately to Mechanical Turk in order to be paid their earnings.
+</li>
+	</ul>
+</div>
+
+<div>
+	<h3>Here are some examples:</h3>
+	<ul>
+	  <li> At the end of a period a group has de-mined portions as follows:  Portion A 40% complete, Portion B 40% complete and Portion C 30% complete. In this case, the group will receive $10 times .30, the amount completed of the least-complete field. Each participant will receive one third of this amount for this period.</li>
+	  <li>* At the end of a period a group has de-mined portions as follows:  Portion A 60% complete, Portion B 50% complete and Portion C 0% complete. In this case the group (and each participant) will receive 0 for this period.</li>
+	  <li> * At the end of a period a group has de-mined portions as follows:  Portion A 50% complete, Portion B 50% complete and Portion C 50% complete. In this case, the group will receive $10 times .50, the amount completed of the least-complete field(s). Each participant will receive one third of this amount for this period.</li>
+	</ul>
+</div>
+
+
+<div>
+	<h3>Comprehension Questions:</h3>
+	<ul>
+	  <ul>
+		<form method="post" action="">
+		{% csrf_token %}
+		<table>
+			{% for f in survey %}
+			    {{f.label}}:</br> {{f}}{{f.help_text|safe}} 
+			    </br>   
+			{%endfor%}
+		</table>
+		<input type="submit" value="Agree and Submit Form"/>
+		</form>
+	</ul>
+	</ul>
+</div>
+
+
+{% endblock %}
+
+
+

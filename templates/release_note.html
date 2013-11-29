@@ -1,0 +1,144 @@
+{% extends "bootstrap_base.html" %}
+{% load url from future %}
+
+ {% block title %} Update User Info
+{% endblock %} {% block script %}
+<script>
+
+</script>
+{% endblock %} {% block script_end_body %}
+<script type="text/javascript">setNavActive("nav_0")</script>
+
+ 
+{% endblock %} {% block body %}
+
+<h1>Release Note: </h1>
+<hr />
+
+
+<div>
+	<h3>2013-06-26</h3>
+	<ul>
+	  <li>New Feature: Change status. Choose from: Replied, NOT Replied, Bounced</li>
+	  <li>New Feature: Notes</li>
+	  <li>Minor Update: Add a option "is_bounced" when importing thread from CSV file</li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-21</h3>
+	<ul>
+	  <li>New Feature: Add filters on page "Add a Thread from My Database", so that you can find a contact very quickly</li>
+	  <li>New Feature: Import thread from CSV file</li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-20</h3>
+	<ul>
+	  <li>New Feature: Statistics Page. View statistics of all/selected threads</li>
+	  <li>New Feature: show demo on statistics page</li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-19</h3>
+	<ul>
+	  <li>Bug Fixed: Symbol support.</li>
+	  <li>New Feature: Statistics Page</li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-18</h3>
+	<ul>
+	  <li>Bug Fixed: Parentheses supported in thread name now.</li>
+	  <li>Minor Update: Change thread detail page layout</li>
+	  <li>Bug Fixed: Percentage_2 fixed</li>
+	  <li>Bug Fixed: Slow down the sending speed to ensure every email is labeled.</li>
+	  <li>Database Structure Changed: Use json_str in thread</li>
+	  <li>Minor Update: Ref color changed</li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-17</h3>
+	<ul>
+	  <li> New Feature: Show which threads have used(Ref) the contact in "My Database". Different color for differnet thread</li>
+	  <li> New Feature: Show or hide selected Variables.</li>
+	  <li> New Feature: New way - % replied for the variable out of the total count for that specific variable.</li>
+	  <li> New Feature: Store received date and time in the database. But this information is not shown on the statistics page.</li>
+	</ul>
+</div>
+
+
+<div>
+	<h3>2013-06-14</h3>
+	<ul>
+	  <li> New Feature: Statistics. Group the statistics by variables.</li>
+	  <li> New Feature: Statistics. Pie Chart. Add percentage in table</li>
+	  <li> New Feature: Update button in each thread.</li>
+	</ul>
+</div>
+
+
+<div>
+	<h3>2013-06-13</h3>
+	<ul>
+	  <li> New Feature: Add delete buttons for each thread. Support thread deleting now.</li>
+	  <li> New Feature: Different colors for the buttons. Make the buttons look good.</li>
+	  <li> New Feature: Create "My Database" by uploading CSV file. Download, Re-upload "My Database"</li>
+	  <li> New Feature: Create new thread from "My Database"</li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-12</h3>
+	<ul>
+	  <li> New Feature: Remove duplicates when first uploading a CSV file and re-uploading a CSV file</li>
+	  <li> New Feature: Demo and no Demo</li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-11</h3>
+	<ul>
+	  <li> New Feature: Support multi-level folder. Just name your thread as "foo/bar/threadname". 
+	  Because gmail do NOT allow spaces in label name, all spaces will be converted to underscore("_") automatically</li>
+	  <li> Minor Update: Change date time format from ISO format to format likes this " Monday, 5:35PM (6/10/13) "</li>
+	  <li> Bug Fixed: Calculation error fixed. Pie chart counts on people. For example, 'Replied' means how many people replied.
+	   If the same person reply twice. We only count once.</li>
+	</ul>
+</div>
+
+
+<div>
+	<h3>2013-06-10</h3>
+	<ul>
+	  <li> New Feature: Add a pie chart on thread detail page </li>
+	  <li> New Feature: It reports bounced emails now </li>
+	  <li> Feature Update: Stop automatically update threads info. Instead, added a update button on threads page. User have to click this button before doing anything. </li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-07</h3>
+	<ul>
+	  <li> New Feature: My Templates. Load the templates you have saved when you send emails </li>
+	</ul>
+</div>
+
+<div>
+	<h3>2013-06-06</h3>
+	<ul>
+	  <li> Bug Fixed: No longer mark email as read </li>
+	  <li> New Feature: Quote the last email you sent </li>
+	  <li> New Feature: Bcc </li>
+	</ul>
+</div>
+
+
+{% endblock %}
+
+
+

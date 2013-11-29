@@ -1,0 +1,43 @@
+{% extends "bootstrap_base.html" %}
+{% load url from future %}
+
+ {% block title %} Update User Info
+{% endblock %} {% block script %}
+<script>
+
+</script>
+{% endblock %} {% block script_end_body %}
+<script type="text/javascript">setNavActive("nav_2")</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		setInterval(function(){
+
+			$.ajax({
+            url: "/wait_room",
+            data: {csrfmiddlewaretoken:'{{csrf_token}}' },
+            type: 'POST'
+        })
+			  .done(function( data ) {
+
+			    // alert( "Data Loaded: " + data );
+			    if(data > 0){
+			 	   window.location.replace("http://0.0.0.0:8000/mine_field/"+data+"/");
+				}
+			  });
+			  },3000);
+
+		}
+
+	);
+</script>
+<div class = 'test'></div>
+{% endblock %} {% block body %}
+Waiting for other team members....
+
+
+
+
+{% endblock %}
+
+
+

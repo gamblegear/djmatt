@@ -1,0 +1,126 @@
+{% extends "bootstrap_base.html" %}
+{% load url from future %}
+
+ {% block title %} Update User Info
+{% endblock %} {% block script %}
+<script>
+
+</script>
+{% endblock %} {% block script_end_body %}
+<script type="text/javascript">setNavActive("nav_3")</script>
+
+ 
+{% endblock %} {% block body %}
+
+<h4>Consent Form </h4>
+<ul>Please review these instructions carefully and if you agree to the terms of experiment, 
+click “continue” at the bottom of the page in order to proceed. 
+<li><h5>Requirements</h5>
+<ul>
+	You must be between 18-60 years of age to complete this study. 
+</ul></li>
+
+
+
+<li><h5>Research Purpose 
+</h5>
+<ul>To study decision-making in groups. 
+
+</ul>
+<h5>What you will do in this study 
+</h5>
+<ul>Participation in this study involves decision-making in an environment with economic 
+interaction. 
+</ul>
+</li>
+
+<li>
+<h5>Time required 
+</h5>
+<ul>The experiment will take approximately 30 minutes to complete. 
+
+</ul>
+</li>
+
+<li>
+<h5>Risks
+</h5>
+<ul>The only potential risk to participants is the psychological discomfort some participants 
+may experience in having to engage in choice tasks in an environment with economic 
+interaction. However, this experience should be well within the normal experience of 
+college students. There are no other risks or stressors associated with this study
+</ul>
+
+</li>
+<li><h5>Time required 
+</h5>
+<ul>The experiment will take approximately 30 minutes to complete. 
+
+</ul>
+</li>
+<li><h5>Benefits
+</h5>
+<ul>There are likely to be no benefits beyond monetary payment for participating in this 
+study.
+</ul></li>
+</ul>
+
+<li><h5>Confidentiality	
+</h5>
+<ul>Your participation in this experiment will remain confidential, and your identity will not 
+be stored with your data. IP address information will not be kept by the researchers. 
+ 
+</ul>
+</li>
+<li>
+<h5>Compensation 
+ 
+</h5>
+<ul>Your participation in this study will involve no cost to you. You will receive a show-up 
+fee of $1 for your participation in this research study. In addition you will be able to earn 
+more money during the study. The exact amount will depend on your actions and the 
+actions of others. Exactly how your additional earnings are calculated is described in the 
+instructions of the study. Your total earnings will be paid to you at the end of the 
+experiment through mTurk. If you withdraw from the study, you will be paid for the 
+portions that you completed. 
+
+</ul></li>
+
+<li>
+
+<h5>Voluntary Participation	
+</h5>
+<ul>Your participation in this study is voluntary, and you are free to withdraw at any time. 
+We will not convey nonparticipation to others. 
+</ul></li>
+
+
+
+
+
+
+<hr />
+
+<div>
+	<h3>Quick Survey:</h3>
+	<ul>
+		<form method="post" action="">
+		{% csrf_token %}
+		<table>
+			{% for f in survey %}
+			    {{f.label}}:</br> {{f}}{{f.help_text|safe}} 
+			    </br>   
+			{%endfor%}
+		</table>
+		<input type="submit" value="Agree and Submit Form"/>
+		</form>
+	</ul>
+
+	
+
+
+
+{% endblock %}
+
+
+

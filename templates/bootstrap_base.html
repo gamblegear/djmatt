@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<title>
+{% load url from future %}
+{% load staticfiles %}
+
+{% block title %}
+{% endblock %}
+	
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Shouda Wang">
+<link rel="stylesheet"
+	href="{% static 'js/jquery-ui-themes-1.9.2/themes/redmond/jquery-ui.css' %}">
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{% static 'bootstrap/css/bootstrap-responsive.css' %}" rel="stylesheet">
+
+
+<script src="{% static 'js/jquery-1.9.1.min.js'%}"></script>
+<script src="{% static 'js/jquery-cookie/jquery.cookie.js' %}"></script>
+
+<script type="text/javascript">
+	function setNavActive(id){
+		document.getElementById(id).setAttribute("class","active");
+	}
+</script>
+	
+	{% block script %}
+	
+	{% endblock %}
+	
+</head>
+
+<body style="">
+
+	<div class="container" style="">
+		<div class="masthead">
+			<h3 class="muted">MINE</h3>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<ul class="nav">
+							<!-- <li class="active"><a href="#">Home</a></li> -->
+							<li id="nav_0"><a href="{% url 'mine.views.home_view' %}" >Home</a></li>
+							<!-- <li id="nav_1"><a href="{% url 'mine.views.select_mine_field_view' %}">Game</a></li> -->
+							
+                            {% if user.is_superuser %}
+                            	<li id="nav_2"><a href="{% url 'mine.views.mine_admin_view' %}">Admin</a></li>
+                           	{% endif %}
+                           	
+							<li id="nav_3"><a href="{% url 'mine.views.mine_instruction_view' %}">Start!</a></li>
+							<li id="nav_4"><a href=""></a></li>
+							<li id="nav_5"><a href=""></a></li>
+
+                            <!--
+							<li id="nav_5"><a href="#"></a></li>
+							<li id="nav_5"><a href="#"></a></li>
+							<li id="nav_5"><a href="#"></a></li>
+                            -->
+							<li id="logout"><a href="{% url 'mine.views.logout_user'%}">Logout</a></li>
+							
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- /.navbar -->
+		</div>
+		
+		<div>
+		{% block body %}
+		
+		{% endblock %}
+		</div>
+
+		
+
+		<hr>
+
+		<footer class="footer">
+		<p>Copyright 2013 Keqiu Hu</p>
+		<p>Ackowledgement: Shouda Wang</p>
+		</footer>
+
+	</div>
+	<!-- /container -->
+	
+	
+
+	
+	<script src="{% static 'js/jquery-ui-1.9.2/ui/jquery-ui.js' %}"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+
+
+	
+	{% block script_end_body %}
+	
+	{% endblock %}
+	
+
+
+</body>
+</html>
