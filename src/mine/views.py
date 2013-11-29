@@ -292,7 +292,7 @@ def wait_room(request):
         user_panel = Panel.objects.filter(user = user)
         if user_panel:
             lens = len(Panel.objects.filter(group = user_panel[0].group, session = 0))
-            if lens < 4:
+            if lens < 3:
                 return HttpResponse(0 - lens, content_type="text/plain")
             else:
                 return HttpResponse(str(Panel.objects.filter(user = user)[0].id), content_type="text/plain")
@@ -303,7 +303,7 @@ def wait_room(request):
         last_group = Group.objects.latest('id')
         select_panels = Panel.objects.filter(group = last_group, session = 0)
         length = len(select_panels)
-        if length < 4:
+        if length < 3:
             new_panel = Panel.objects.create(game = last_group.game,
                 group = last_group,
                 name = str(length + 1),
@@ -325,7 +325,7 @@ def wait_room(request):
         panel = Panel.objects.filter(user = user, session = 0)[0]
         group = panel.group
         panels_size = len(Panel.objects.filter(group = group, session = 0))
-        if panels_size < 4:
+        if panels_size < 3:
             return HttpResponse(0 - panels_size, content_type="text/plain")
         else:     
             return HttpResponse(str(Panel.objects.filter(user = user, session = 0)[0].id), content_type="text/plain")
